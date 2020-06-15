@@ -243,14 +243,14 @@ if(usuarioLogado.getAdm().equals("s")){
                   <div class="carousel-caption" style="color: black; background: white">
                     <h3>Seja um professor você tambem!</h3>
                     <h5>Ganhe horas complementares ao tirar dúvidas de outros alunos em aréas que você já domina.</h5>
-s                    <a href="" class="btn btn-primary">Clique aqui para saber mais</a>
+                    <a href="" class="btn btn-primary">Clique aqui para saber mais</a>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="img/imagem3.jpg" class="img-fluid" width="1100">
-                  <div class="carousel-caption">
-                    <h3>Item 3</h3>
-                    <p>Exemplo aaa.</p>
+           		 <div class="carousel-caption" style="color: black; background: white">
+                    <h3>Maratona de programação </h3>
+                    <p>Venha fazer parte da Maratona de programação dia 14/06/2020.</p>
                   </div>
                 </div>
               </div>
@@ -276,15 +276,15 @@ s                    <a href="" class="btn btn-primary">Clique aqui para saber m
 			"        <div class='row'><!--Row -->\r\n");
     out.print("          <div class='col-md-4 m-auto'><!--col-md4 -->\r\n" + 
 			"            <div class='card columns'>\r\n" + 
-			"              <div class='card'>\r\n" + 
+			"              <div class='card' style='height: 485px;'>\r\n" + 
 			"                <div class='card-header bg-danger text-white '>\r\n" + 
-			"                  Cabeçalho do cartão\r\n" + 
+			"                   <strong>#Notícia</strong> \r\n" + 
 			"                </div>\r\n"+
 			"                <div class='card-body'>\r\n" +
 			"                  <h4 class='card-title' maxlength='18'><a href='detalhes-noticia.jsp?id="+noticias.get(i).getId() +"'>"+noticias.get(i).getTitulo() +"<a/></h4>\r\n" + 
-			"                  <h6 class='card-subtitle'>Subtítulo do cartão</h6>\r\n" + 
+			"                  <h6 class='card-subtitle'></h6>\r\n" + 
 			"                  <p class='card-text'  maxlength='50'>"+ noticias.get(i).getDescricao() + 
-			"                 <a class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i).getId() +"'> Leia mais</a>\r\n" + 
+			"                 <br><a class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i).getId() +"'> Leia mais</a>\r\n" + 
 			"                </div>\r\n" + 
 			"              </div>\r\n" + 
 			"            </div> \r\n" + 
@@ -292,15 +292,15 @@ s                    <a href="" class="btn btn-primary">Clique aqui para saber m
     if(i+1<noticias.size()){
 	    out.print("          <div class='col-md-4 m-auto'><!--col-md4 -->\r\n" + 
 				"            <div class='card columns'>\r\n" + 
-				"              <div class='card'>\r\n" + 
+				"              <div class='card' style='height: 485px;'>\r\n" + 
 				"                <div class='card-header bg-danger text-white '>\r\n" + 
-				"                  Cabeçalho do cartão\r\n" + 
+				"                   <strong>#Notícia</strong> \r\n" + 
 				"                </div>\r\n" + 
 				"                <div class='card-body'>\r\n" + 
 				"                  <h4 class='card-title' maxlength='18'><a href='detalhes-noticia.jsp?id="+noticias.get(i+1).getId() +"'>"+noticias.get(i+1).getTitulo() +"</a></h4>\r\n" + 
-				"                  <h6 class='card-subtitle'>Subtítulo do cartão</h6>\r\n" + 
+				"                  <h6 class='card-subtitle'></h6>\r\n" + 
 				"                  <p class='card-text'  maxlength='50'>"+ noticias.get(i+1).getDescricao() + 
-				"                 <a  class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i+1).getId() +"'>Leia mais</a>\r\n" + 
+				"                 <br><a  class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i+1).getId() +"'>Leia mais</a>\r\n" + 
 				"                </div>\r\n" + 
 				"              </div>\r\n" + 
 				"            </div> \r\n" + 
@@ -309,15 +309,15 @@ s                    <a href="" class="btn btn-primary">Clique aqui para saber m
     if(i+2<noticias.size()){
 		  out.print("          <div class='col-md-4 m-auto'><!--col-md4 -->\r\n" + 
 					"            <div class='card columns'>\r\n" + 
-					"             <div class='card'>\r\n" + 
+					"             <div class='card' style='height: 485px;'>\r\n" + 
 					"                <div class='card-header bg-danger text-white '>\r\n" + 
-					"                  Cabeçalho do cartão\r\n" + 
+					"                <strong>#Notícia</strong>\r\n" + 
 					"                </div>\r\n" + 
 					"                <div class='card-body'>\r\n" + 
 					"                  <h4 class='card-title ' maxlength='18'><a href='detalhes-noticia.jsp?id="+noticias.get(i+2).getId() +"'>"+noticias.get(i+2).getTitulo() + "</a></h4>\r\n" + 
-					"                  <h6 class='card-subtitle'>Subtítulo do cartão</h6>\r\n" + 
+					"                  <h6 class='card-subtitle'></h6>\r\n" + 
 					"                  <p class='card-text' >"+ noticias.get(i+2).getDescricao() + 
-					"                  <a class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i+2).getId() +"'> Leia mais</a>\r\n" + 
+					"                  <br><a class='btn btn-danger' href='detalhes-noticia.jsp?id="+noticias.get(i+2).getId() +"'> Leia mais</a>\r\n" + 
 					"                </div>\r\n" + 
 					"              </div>\r\n" + 
 					"            </div> \r\n" + 

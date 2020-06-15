@@ -64,7 +64,7 @@ materia = ms.carregar(solicitacao.getCodMateria());
 			<div class="row">
 				<div class="col-md-12 mt-2">
 					<div class="mb-2 border rounded bg-dark">
-						<div class="text-center">
+						<div class="text-center text-capitalize">
 							<h2 style="color: white;">
 								<%
 									out.print(materia.getNome());
@@ -131,7 +131,7 @@ materia = ms.carregar(solicitacao.getCodMateria());
 									<%
 									if (solicitacao.getStatus().equals("pendente") ){
 											
-										if(usuarioLogado.getId() != solicitacao.getCodAlunoAprende()){
+										if(usuarioLogado.getId() == solicitacao.getCodAlunoEnsina()){
 											out.println("<a href='AtualizarSolicitacao.do?status=aceita&id="+solicitacao.getId()+"'><button class='btn btn-success btn-sm' type='button'>Aceitar</button></a>");								
 											out.println("<a href='AtualizarSolicitacao.do?status=recusada&id="+solicitacao.getId()+"'><button class='btn btn-danger btn-sm' type='button'>Recusar</button></a>");
 										}

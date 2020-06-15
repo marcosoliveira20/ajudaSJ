@@ -178,7 +178,7 @@ materia = ms.carregar(usuario.getCodMateriaBoa());
 
 
 <title>Ajuda São Judas</title>
-<link rel="icon" href="imagens/favicon.png">
+<link rel="icon" href="img/favicon.png">
 
 
 
@@ -249,7 +249,7 @@ materia = ms.carregar(usuario.getCodMateriaBoa());
 						<div class="form-group">
 							<input type="text" id="senha" name="senha"
 								value="<%out.print(usuario.getSenha());%>" class="form-control"
-								readonly>
+								>
 						</div>
 
 						<label for="ra">R.A</label>

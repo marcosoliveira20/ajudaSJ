@@ -27,7 +27,7 @@ SolicitacaoService sc = new SolicitacaoService();
 <meta http-equiv="expires" content="0" />
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
-  <title>Dashboard Template · Bootstrap</title>
+  <title>DashBoard</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
@@ -96,7 +96,7 @@ SolicitacaoService sc = new SolicitacaoService();
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Horas Aula Mensais</h1>
+          <h1 class="h2">Solicitações</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
 
             </button>

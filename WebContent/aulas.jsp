@@ -24,7 +24,7 @@ MateriaService ms = new MateriaService();
   <head>
 
     <title>Ajuda São Judas - Professores</title>
-    <link rel="icon" href="imagens/favicon.png">
+    <link rel="icon" href="img/favicon.png">
 
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -82,7 +82,7 @@ MateriaService ms = new MateriaService();
 										"                         <span><strong>Local da aula: </strong> São Judas Paulista - Livraria</span>\r\n" + 
 										"	                     </div>\r\n" + 
 										"	                   </div>\r\n" + 
-										"	                	</li><</a>"
+										"	                	</li></a>"
 										);	
 							
 								}

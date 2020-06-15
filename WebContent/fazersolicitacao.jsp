@@ -87,8 +87,8 @@ MateriaService ms = new MateriaService();
 									
 									out.println("<li class='list-group-item '><a href= 'nova.solicitacao.jsp" + "?id=" + userEnsina.getId() + "&idmateria=" + userEnsina.getCodMateriaBoa() +"'>" +" <div class='media'>"
 									+ "<img class='mr-3 align-self-center'" + "src='img/" + userEnsina.getFoto() + "'width='60' height='60'>"
-									+ "<div class='media-body text-dark'>" + "<h5>" + userEnsina.getNome() + "</h5>"
-									+ "<p>Quantidade de aulas realizadas:</p>" + "</div>" + "</div>" + "</a></li>");
+									+ "<div class='media-body text-dark'>" + "<h5 class ='mt-3'>" + userEnsina.getNome() + "</h5>"
+									+ "" + "</div>" + "</div>" + "</a></li>");
 								}
 							}
 							%>

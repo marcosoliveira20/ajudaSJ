@@ -1,3 +1,6 @@
+
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="model.Solicitacao"%>
@@ -185,7 +188,7 @@ if (id != null) {
 </style>
 
 <title>Ajuda São Judas</title>
-<link rel="icon" href="imagens/favicon.png">
+<link rel="icon" href="img/favicon.png">
 
 <!-- Meta tags Obrigatórias -->
 <meta charset="utf-8">
@@ -219,7 +222,7 @@ if (id != null) {
 
 
 	<%
-		if (usuarioLogado.equals("marcos.oliveira129@hotmail.com")) {
+		if (usuarioLogado.getAdm().equals("s")) {
 		out.print("	<div id='lateral'>\r\n" + "		<nav class='menu navbar'>\r\n" + "\r\n"
 		+ "			<h3 class='link-titulo'>Ferramentas</h3>\r\n" + "			<ul class='box navbar-nav'>\r\n"
 		+ "				<li class='navbar-item'><a href='adm.noticias.jsp' class='text-white'><i\r\n"
@@ -237,7 +240,7 @@ if (id != null) {
 
 
 	<section>
-		<form action="CriarNoticia.do" method="post"class="form-group ls-form">
+		<form action="Noticias.do" method="post"class="form-group ls-form">
 			<div class="container mt-5">
 				<h1 class="mb-3 text-md-center ">Adicionar notícias no site</h1>
 				<div class="border-bottom mb-5"></div>
@@ -250,7 +253,7 @@ if (id != null) {
 							name="titulo" type="text" placeholder="Título da notícia" id="tn"
 							required> <label for="mensagem" class="ls-label mt-3">Texto
 							abreviado - limite de 350 caracteres</label>
-						<textarea class="form-control" name="descricao" id="mensagem"
+						<textarea class="form-control" name="descricao" id="descricao"
 							rows="10" maxlength="350">
 							<%
 								out.print(noticia.getDescricao());
@@ -280,14 +283,19 @@ if (id != null) {
 					</div>
 					<div class="col col-md-12">
 						<label for="mensagem" class="ls-label mt-3">Conteúdo: </label>
-						<textarea name="conteudo" class="form-control" id="mensagem"
-							rows="15"></textarea>
-						<input type="submit" value="Criar" class="btn btn-success mt-2">
-						<input type="submit" value="Atualizar"
-							class="btn btn-success mt-2"> <input type="submit"
-							value="Cancelar" class="btn btn-warning mt-2"> <input
-							type="submit" value="Excluir" class="btn btn-danger mt-2">
+						<textarea name="conteudo" class="form-control" id="conteudo"
+							rows="15"><%=noticia.getTexto() %></textarea>
+							<input name='id' type='hidden' value='<%= noticia.getId()%>'>
+							<%
 
+							if(id == null){
+								
+								out.println("<input name='acao' type='submit' value='Criar' class='btn btn-success mt-2'>");
+							}
+							else{
+								out.println("<input name='acao' type='submit' value='Atualizar' class='btn btn-success mt-2'> <input name='acao' type='submit' value='Excluir' class='btn btn-danger mt-2'>");
+							}
+%>						
 					</div>
 				</div>
 			</div>

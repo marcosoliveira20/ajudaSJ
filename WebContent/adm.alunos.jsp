@@ -156,7 +156,7 @@ body {margin-left:0;background-size:100% 28em!important;}
   </style>
 
     <title>Ajuda São Judas</title>
-    <link rel="icon" href="imagens/favicon.png">
+    <link rel="icon" href="img/favicon.png">
 <script src="js/query-3.5.1.min.js"></script>
 
 
@@ -216,8 +216,7 @@ if(usuarioLogado.getAdm().equals("s")){
             <div class="col-md-12">
               <div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                <input name="consulta" id="txt_consulta" placeholder="Procurar pelo Nome, RA ou ID" type="text" class="form-control" style="max-width: 500px;">
-              </div>
+                       </div>
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
@@ -241,12 +240,6 @@ if(usuarioLogado.getAdm().equals("s")){
                 }
                 
                 %>
-                  <tr>
-                    <td>Vitor Dantas Rodrigues</td>
-                    <td>dantasvitor42@gmail.com</td>
-                    <td>819110978</td>
-                    <td>09876</td>
-                  </tr>
                 </tbody>
               </table>
             </div>

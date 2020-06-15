@@ -1,16 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%session.setAttribute("usuario", null); %>
+<%@page import="model.Materia"%>
+<%@page import="service.MateriaService"%>
+<%@page import="java.util.ArrayList"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Materia materia = new Materia();
+MateriaService ms = new MateriaService();
+ArrayList<Materia> materias = ms.buscarMateria();
+%>
+
+<%
+	session.setAttribute("usuario", null);
+%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta http-equiv="cache-control" content="max-age=0" />
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="expires" content="0" />
-<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-<meta http-equiv="pragma" content="no-cache" />
+
 <title>Ajuda São Judas</title>
-<link rel="icon" href="imagens/favicon.png">
+<link rel="icon" href="img/favicon.png">
 
 <!-- Meta tags Obrigatórias -->
 <meta charset="utf-8">
@@ -64,8 +72,9 @@
 							<div class="form-group">
 								<label for="senha" class="ml-1">Senha</label> <input
 									class="form-control" type="password" name="senha" id="senha"
-									placeholder="Senha" required>
-									<input type= "hidden" class="is-invalid">
+									placeholder="Senha" required> <a
+									href="esqueci-a-senha.jsp" class="ml-1">Esqueceu a senha?</a> <input
+									type="hidden" class="is-invalid">
 								<div class="invalid-feedback">${erro}</div>
 							</div>
 						</div>
@@ -116,21 +125,69 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="text" name="cidade"
-												id="cidade" placeholder="Cidade" required>
+											<select class="form-control" name="cidade" id="cidade"
+												required>
+												<option>Belém</option>
+												<option>Campinas</option>
+												<option>Campo Grande</option>
+												<option>Florianópolis</option>
+												<option>Fortaleza</option>
+												<option>Guarulhos</option>
+												<option>Natal</option>
+												<option>Osasco</option>
+												<option>Recife</option>
+												<option>Santo André</option>
+												<option>São Bernardo do Campos</option>
+												<option>São Paulo</option>
+											</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="text" name="estado"
-												id="estado" placeholder="Estado" required>
+											<select class="form-control" id="estado" name="estado"
+												required>
+												<option>Acre</option>
+												<option>Alagoas</option>
+												<option>Amapá</option>
+												<option>Amazonas</option>
+												<option>Bahia</option>
+												<option>Ceará</option>
+												<option>Distrito Federal</option>
+												<option>Espírito Santo</option>
+												<option>Goiás</option>
+												<option>Maranhão</option>
+												<option>Mato Grosso</option>
+												<option>Mato Grosso do Sul</option>
+												<option>Minas Gerais</option>
+												<option>Pará</option>
+												<option>Paraíba</option>
+												<option>Paraná</option>
+												<option>Pernambuco</option>
+												<option>Piauí</option>
+												<option>Rio de Janeiro</option>
+												<option>Rio Grande do Norte</option>
+												<option>Rio Grande do Sul</option>
+												<option>Rondônia</option>
+												<option>Roraima</option>
+												<option>Santa Catarina</option>
+												<option>São Paulo</option>
+												<option>Sergipe</option>
+												<option>Tocantins</option>
+											</select>
 										</div>
 									</div>
 								</div>
 								<h9>*opcional</h9>
 								<div class="form-group">
-									<input class="form-control" type="text" name="materia"
-										id="materia" placeholder="Matéria que deseja ensinar">
+									<select class="form-control" name="materia">
+										<%
+											for (int i = 0; materias.size() > i; i = i + 1) {
+											System.out.println("Materias na pag web: " + materias.get(i).toString() + "Na posisão " + i);
+											out.println("<option class='text-capitalize'>" + materias.get(i).getNome() + "</option>");
+										}
+										%>
+
+									</select>
 								</div>
 								<input class="btn btn-outline-danger  btn-block mb-4"
 									type="submit" value="Cadastre-se">

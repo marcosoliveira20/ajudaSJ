@@ -208,7 +208,9 @@ body {margin-left:0;background-size:100% 28em!important;}
         </div><!--/Row-->
         <%
 boolean adm = false;
-if(usuarioLogado.getEmail().equals("marcos.oliveira129@hotmail.com")){
+if(usuarioLogado.getAdm().equals("s")){
+	out.print("<a href='adm.noticias.jsp?id="+noticia.getId()+"'> <input type='submit' value='Atualiza' class='btn btn-warning mt-2'></a>");
+
 	out.print("<a href='ApagarNoticia.do?id="+noticia.getId()+"'> <input type='submit' value='Excluir' class='btn btn-danger mt-2'></a>");
 }
 %>
