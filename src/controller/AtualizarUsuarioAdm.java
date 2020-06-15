@@ -53,7 +53,6 @@ public class AtualizarUsuarioAdm extends HttpServlet {
 			usuario.setCidade(request.getParameter("cidade"));
 			usuario.setEstado(request.getParameter("estado"));
 			usuario.setRa(request.getParameter("ra"));
-			usuario.setRa(request.getParameter("adm"));
 			usuario.setCodMateriaBoa(ms.carregar(request.getParameter("materia").toLowerCase()).getId());
 			int s = (Integer) request.getSession().getAttribute("idLogado");
 			Usuario aux = us.carregar(s);

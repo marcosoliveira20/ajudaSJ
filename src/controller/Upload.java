@@ -101,6 +101,7 @@ public class Upload extends HttpServlet {
 	     RequestDispatcher view = 
 	    	        request.getRequestDispatcher("foto-usuario.jsp");
 	    	        view.forward(request, response);
+	   
 	
 	
 	}

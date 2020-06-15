@@ -37,5 +37,9 @@ public class MateriaService {
 		}
 		return null;
 	}
+	public ArrayList<Materia> listarMaterias(){
+		return dao.listarMaterias();
+	}
+
 
 }

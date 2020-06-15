@@ -32,7 +32,7 @@ public class LoginFilter implements Filter {
 		if (comando == null) {
 			comando = "";
 		}
-		if (logado == null && !uri.equals(path + "/index.jsp") && !uri.equals(path + "/Login") ) {
+		if (logado == null && !uri.equals(path + "/index.jsp") &&!uri.equals(path + "/esqueci-a-senha.jsp") &&!uri.equals(path + "/redefinir-a-senha.jsp") && !uri.equals(path + "/Login") && !uri.equals(path + "/EsqueciASenha.do") && !uri.equals(path + "/CriarUsuario.do")) {
 			((HttpServletResponse) response).sendRedirect(path + "/index.jsp");
 		} else {
 // pass the request along the filter chain

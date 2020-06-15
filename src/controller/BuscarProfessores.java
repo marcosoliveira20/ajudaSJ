@@ -38,10 +38,14 @@ public class BuscarProfessores extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		String s = request.getParameter("pesquisarMaterias");
+		String id = request.getParameter("id");
 		MateriaService ms = new MateriaService();
 		Materia materia = new Materia();
 		if (s != null && s != "") {
 			materia = ms.carregar(s);
+		}else if(id != null && id!="") {
+			materia = ms.carregar(Integer.parseInt(id));
+			
 		}
 		UsuarioService us = new UsuarioService();
 		if (materia.getId() != -1 && materia.getId() != 0) {
@@ -54,8 +58,8 @@ public class BuscarProfessores extends HttpServlet {
 		} else {
 
 			request.setAttribute("erro", "erro");
-			request.setAttribute("erro", " <script>alert(\"Matéria não Encontrada!\");</script>");
-			RequestDispatcher view = request.getRequestDispatcher("fazersolicitacao.jsp");
+			request.setAttribute("erro", " <script>alert(\"Matéria não Encontrada, aqui estão todas as nossas matérias disponiveís!\");</script>");
+			RequestDispatcher view = request.getRequestDispatcher("listar_materias.do");
 			view.forward(request, response);
 
 		}

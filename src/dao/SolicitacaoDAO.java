@@ -31,8 +31,8 @@ public class SolicitacaoDAO {
 			stm.setString(11, solicitacao.getLocal());
 			stm.execute();
 			String sqlQuery = "SELECT LAST_INSERT_ID()";
-			Email.novaSolicitacaoEnsina(solicitacao.getEmailEnsina(), "", "");
-			Email.confirmaSolicitacao(solicitacao.getEmailAprende(), "");
+			//Email.novaSolicitacaoEnsina(solicitacao.getEmailEnsina(), "", "");
+			//Email.confirmaSolicitacao(solicitacao.getEmailAprende(), "");
 			try (PreparedStatement stm2 = conn.prepareStatement(sqlQuery); ResultSet rs = stm2.executeQuery();) {
 				if (rs.next()) {
 					solicitacao.setId(rs.getInt(1));

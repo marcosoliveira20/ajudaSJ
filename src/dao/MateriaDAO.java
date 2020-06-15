@@ -140,5 +140,28 @@ public class MateriaDAO {
 		}
 		return colecaoMateria;
 	}
+	
+	public ArrayList<Materia> listarMaterias() {
+		Materia materia;
+		ArrayList<Materia> lista = new ArrayList<>();
+		String sqlSelect = "SELECT * FROM materia";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					materia = new Materia();
+					materia.setId(rs.getInt("codMateria"));
+					materia.setNome(rs.getString("nome"));
+					lista.add(materia);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
 
 }
