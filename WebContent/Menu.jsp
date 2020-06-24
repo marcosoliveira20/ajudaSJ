@@ -11,12 +11,9 @@
 <%
 	UsuarioService us = new UsuarioService();
 Usuario userLog = (Usuario) session.getAttribute("usuario");
+request.setAttribute("usuarioLogado", userLog);
 %>
-<%
-	response.setHeader("Cache-Control", "no-cache"); //HTTP 1.1 
-response.setHeader("Pragma", "no-cache"); //HTTP 1.0 
-response.setDateHeader("Expires", 0); //prevents caching at the proxy server
-%>
+
 <header>
 
 	<nav
@@ -35,7 +32,9 @@ response.setDateHeader("Expires", 0); //prevents caching at the proxy server
 						<ul>
 							<li><a href="BuscarProfessores.do?pesquisarMaterias=calculo">Calculo</a></li>
 							<li><a href="BuscarProfessores.do?pesquisarMaterias=java">Java</a></li>
-							<li><a href="BuscarProfessores.do?pesquisarMaterias=Banco+de+Dados">Banco de Dados</a></li>
+							<li><a
+								href="BuscarProfessores.do?pesquisarMaterias=Banco+de+Dados">Banco
+									de Dados</a></li>
 						</ul></li>
 					<li class="navbar-item"><a href="solicitacoes.jsp">Solicitações</a>
 						<ul>
@@ -72,3 +71,22 @@ response.setDateHeader("Expires", 0); //prevents caching at the proxy server
 		</div>
 	</nav>
 </header>
+<c:if test="${ usuarioLogado.adm == 's'}">
+
+
+	<div id='lateral' >
+		<nav class='menu navbar'>
+			<h3 class='link-titulo'>Ferramentas</h3>	
+			<ul class='box navbar-nav'>		
+				<li class='navbar-item'><a href='adm.noticias.jsp'
+					class='text-white'><i class='fas fa-newspaper mr-1'></i>Notícias</a></li>
+				<li class='navbar-item'><a href='adm.alunos.jsp'
+					class='text-white'><i class='fas fa-users mr-1'></i>Alunos</a></li>
+				<li class='navbar-item'><a href='CarregarDashboard.do'
+					class='text-white'><i class='far fa-chart-bar mr-1'></i>Gráfico</a></li>
+			</ul>
+		</nav>
+	</div >
+
+</c:if>
+

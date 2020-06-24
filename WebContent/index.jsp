@@ -5,13 +5,11 @@
 <%@page import="java.util.ArrayList"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-	Materia materia = new Materia();
+Materia materia = new Materia();
 MateriaService ms = new MateriaService();
 ArrayList<Materia> materias = ms.buscarMateria();
-%>
-
-<%
-	session.setAttribute("usuario", null);
+request.setAttribute("materias", materias);
+session.setAttribute("usuario", null);
 %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -180,13 +178,11 @@ ArrayList<Materia> materias = ms.buscarMateria();
 								<h9>*opcional</h9>
 								<div class="form-group">
 									<select class="form-control" name="materia">
-										<%
-											for (int i = 0; materias.size() > i; i = i + 1) {
-											System.out.println("Materias na pag web: " + materias.get(i).toString() + "Na posisão " + i);
-											out.println("<option class='text-capitalize'>" + materias.get(i).getNome() + "</option>");
-										}
-										%>
-
+										<c:forEach var="materia" items="${materias}">
+											<option>
+												<c:out value="${materia.nome}" />
+											</option>
+										</c:forEach>
 									</select>
 								</div>
 								<input class="btn btn-outline-danger  btn-block mb-4"
