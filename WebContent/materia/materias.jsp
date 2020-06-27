@@ -23,23 +23,20 @@
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
 <!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 
 <!-- Font awesome -->
 <script src="https://kit.fontawesome.com/3dd5c4116c.js"
 	crossorigin="anonymous"></script>
 
-<!--HTML5Shiv -->
-<!-- [if lt IE 9]>
-      < src"https://cdnjscloudflare.com/ajax/libs/
-      html5shiv/3.7.3/html5shiv.js"></>
-    <![endif]-->
-
-<!--Estilo customizado -->
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
 </head>
 <body>
-	<c:import url="Menu.jsp" />
+	<c:import url="../Menu.jsp" />
 
 	<!---- -------->
 

@@ -183,28 +183,7 @@ body {margin-left:0;background-size:100% 28em!important;}
     
   </head>
   <body>
-	<c:import url="Menu.jsp" />
-
-	
-<%
-if(usuarioLogado.getAdm().equals("s")){
-	out.print("	<div id='lateral'>\r\n" + 
-			"		<nav class='menu navbar'>\r\n" + 
-			"\r\n" + 
-			"			<h3 class='link-titulo'>Ferramentas</h3>\r\n" + 
-			"			<ul class='box navbar-nav'>\r\n" + 
-			"				<li class='navbar-item'><a href='adm.noticias.jsp' class='text-white'><i\r\n" + 
-			"						class='fas fa-newspaper mr-1'></i>Notícias</a></li>\r\n" + 
-			"				<li class='navbar-item'><a href='adm.alunos.jsp' class='text-white'><i\r\n" + 
-			"						class='fas fa-users mr-1'></i>Alunos</a></li>\r\n" + 
-			"				<li class='navbar-item'><a href='CarregarDashboard.do' class='text-white'><i\r\n" + 
-			"						class='far fa-chart-bar mr-1'></i>Gráfico</a></li>\r\n" + 
-			"			</ul>\r\n" + 
-			"		</nav>\r\n" + 
-			"		\r\n" + 
-			"	</div id='link'>");
-}
-%>
+	<c:import url="../Menu.jsp" />
    
 <!-- vazio -->
 

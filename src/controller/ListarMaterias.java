@@ -32,7 +32,7 @@ public class ListarMaterias extends HttpServlet {
 		lista = ms.listarMaterias();
 		request.setAttribute("lista", lista);
 		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("materias.jsp");
+				.getRequestDispatcher("materia/materias.jsp");
 		dispatcher.forward(request, response);
 	}
 

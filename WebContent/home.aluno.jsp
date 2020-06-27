@@ -35,11 +35,6 @@ request.setAttribute("noticias", noticias);
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta http-equiv="cache-control" content="max-age=0" />
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="expires" content="0" />
-<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-<meta http-equiv="pragma" content="no-cache" />
 
 
 <style type="text/css">
@@ -301,7 +296,7 @@ request.setAttribute("noticias", noticias);
 									<h6 class='card-subtitle'></h6>
 									<p class='card-text'>${noticia.descricao}</p>
 									<br> <a class='btn btn-danger'
-										href='noticias/detalhes-noticia.jsp?id="+${noticia.id} '>
+										href='noticias/detalhes-noticia.jsp?id=${noticia.id} '>
 										Leia mais</a>
 								</div>
 							</div>
@@ -322,7 +317,7 @@ request.setAttribute("noticias", noticias);
 										<p class='card-text'>
 											${noticias[(i.index)+1].descricao} <br> <a
 												class='btn btn-danger'
-												href='detalhes-noticia.jsp?id=${noticias[(i.index) + 1].id}'>Leia
+												href='noticias/detalhes-noticia.jsp?id=${noticias[(i.index) + 1].id}'>Leia
 												mais</a>
 									</div>
 								</div>
@@ -344,7 +339,7 @@ request.setAttribute("noticias", noticias);
 										<p class='card-text'>
 											${noticias[(i.index)+2].descricao} <br>
 											<a class='btn btn-danger'
-												href='detalhes-noticia.jsp?id=${noticias[(i.index) + 2].id}'>>
+												href='noticias/detalhes-noticia.jsp?id=${noticias[(i.index) + 2].id}'>
 												Leia mais</a>
 									</div>
 								</div>
