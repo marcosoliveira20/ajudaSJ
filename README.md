@@ -9,20 +9,4 @@ e gerenciar quais aulas estão marcadas e quais solicitações chegaram, a cada 
 Tudo é supervisionado por um administrador o qual pode fazer pequenas alterações no perfil de outros usuários e postar noticias relevantes sobre o site ou instituição de ensino. o ADM
 Conta também com um dashboard para acompanhar cada aluno e um geral para acompanhar o quão movimentado está sendo o site.
 
-
-<img src="img/navegacao-adm.gif">
-
-<img src="img/navegacao-user.gif">
-
-<img src="img/index.png">
-
-<img src="img/esqueci-a-senha.png">
-
-## Tecnologias usadas?
-
-- Javax Mail
-- Java EE 
-- Tomcat
-- BootStrap
-- JSTL
-- JSP
+### Obs: está branch é para atualização do projeto para adotar a tecnologia spring.
