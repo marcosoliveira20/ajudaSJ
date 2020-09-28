@@ -6,11 +6,13 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.ajudasj.config.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity(name ="usuario")
@@ -21,7 +23,8 @@ import lombok.NoArgsConstructor;
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
 		  property = "id")
 
-public class Usuario {
+@EqualsAndHashCode(callSuper = true)
+public class Usuario extends AbstractEntity{
 
 	@Column(name = "nome", nullable = false, length = 150)
 	private String nome;
