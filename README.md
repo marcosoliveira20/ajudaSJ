@@ -26,3 +26,7 @@ Conta também com um dashboard para acompanhar cada aluno e um geral para acompa
 - BootStrap
 - JSTL
 - JSP
+
+## Novidades a caminho
+
+Na branch chamada spring estou fazendo um update do projeto para spring da uma conferida lá :)
