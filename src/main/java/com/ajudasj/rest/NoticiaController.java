@@ -1,6 +1,5 @@
 package com.ajudasj.rest;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,26 +13,25 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.ajudasj.model.entity.Usuario;
-import com.ajudasj.model.repository.UsuarioRepository;
-
+import com.ajudasj.model.entity.Noticia;
+import com.ajudasj.model.repository.NoticiaRepository;
 
 @RestController
-@RequestMapping("/api/usuarios")
-public class UsuarioController {
+@RequestMapping("/api/noticias")
+public class NoticiaController {
 	
-	private final UsuarioRepository repository;
+	private final NoticiaRepository repository;
 	
 	@Autowired
-	public UsuarioController(UsuarioRepository repository) {
+	public NoticiaController (NoticiaRepository repository) {
 		this.repository = repository;
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public  Usuario salvar (@RequestBody Usuario usuario) {
+	public  Noticia salvar (@RequestBody Noticia noticia) {
 		try {	
-			return repository.save(usuario);
+			return repository.save(noticia);
 					
 		}catch(Exception e) {
 			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Usuário já cadastrado" );
@@ -41,8 +39,8 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("{id}")
-	public Usuario encontrarPorId(@PathVariable Integer id) {
-		return repository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+	public Noticia encontrarPorId(@PathVariable Integer id) {
+		return repository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Noticia não encontrado!"));
 		
 	}
 	
@@ -50,26 +48,25 @@ public class UsuarioController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deletar (@PathVariable Integer id) {
 		repository.findById(id)
-		.map( usuario -> {
-			repository.delete(usuario);
+		.map( noticia -> {
+			repository.delete(noticia);
 			return Void.TYPE;
 		}		
 				)
-		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Noticia não encontrado!"));
 	}
 	
 	@PutMapping("{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void atualizar(@PathVariable Integer id, @RequestBody  Usuario usuarioAtualizado ) {
+	public void atualizar(@PathVariable Integer id, @RequestBody  Noticia noticiaAtualizado ) {
 		
 		repository.findById(id)
-		.map( usuario -> {
-			usuarioAtualizado.setId(usuario.getId());
-			return repository.save(usuarioAtualizado);
+		.map( noticia -> {
+			noticiaAtualizado.setId(noticia.getId());
+			return repository.save(noticiaAtualizado);
 			 
 		}		
 				)
-		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Noticia não encontrado!"));
 	}
-
 }

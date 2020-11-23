@@ -6,14 +6,18 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.ajudasj.config.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@SuppressWarnings("serial")
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name="solicitacao")
@@ -21,11 +25,8 @@ import lombok.NoArgsConstructor;
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
 		  property = "id")
 
-public class Solicitacao {
-	
-	@Column(name="fk_andamento")
-	private Andamento andamento;
-	
+public class Solicitacao extends AbstractEntity {
+		
 	@Column(name="aluno_id",nullable=false)
 	private Usuario aluno;
 	

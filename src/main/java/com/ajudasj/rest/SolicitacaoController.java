@@ -14,26 +14,26 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.ajudasj.model.entity.Usuario;
-import com.ajudasj.model.repository.UsuarioRepository;
+import com.ajudasj.model.entity.Solicitacao;
+import com.ajudasj.model.repository.SolicitacaoRepository;
 
 
 @RestController
-@RequestMapping("/api/usuarios")
-public class UsuarioController {
-	
-	private final UsuarioRepository repository;
+@RequestMapping("/api/solicitacoes")
+public class SolicitacaoController {
+
+	private final SolicitacaoRepository repository;
 	
 	@Autowired
-	public UsuarioController(UsuarioRepository repository) {
+	public SolicitacaoController(SolicitacaoRepository repository) {
 		this.repository = repository;
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public  Usuario salvar (@RequestBody Usuario usuario) {
+	public  Solicitacao salvar (@RequestBody Solicitacao solicitacao) {
 		try {	
-			return repository.save(usuario);
+			return repository.save(solicitacao);
 					
 		}catch(Exception e) {
 			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Usuário já cadastrado" );
@@ -41,8 +41,8 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("{id}")
-	public Usuario encontrarPorId(@PathVariable Integer id) {
-		return repository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+	public Solicitacao encontrarPorId(@PathVariable Integer id) {
+		return repository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Solicitacao não encontrado!"));
 		
 	}
 	
@@ -50,26 +50,26 @@ public class UsuarioController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deletar (@PathVariable Integer id) {
 		repository.findById(id)
-		.map( usuario -> {
-			repository.delete(usuario);
+		.map( solicitacao -> {
+			repository.delete(solicitacao);
 			return Void.TYPE;
 		}		
 				)
-		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Solicitacao não encontrado!"));
 	}
 	
 	@PutMapping("{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void atualizar(@PathVariable Integer id, @RequestBody  Usuario usuarioAtualizado ) {
+	public void atualizar(@PathVariable Integer id, @RequestBody  Solicitacao solicitacaoAtualizado ) {
 		
 		repository.findById(id)
-		.map( usuario -> {
-			usuarioAtualizado.setId(usuario.getId());
-			return repository.save(usuarioAtualizado);
+		.map( solicitacao -> {
+			solicitacaoAtualizado.setId(solicitacao.getId());
+			return repository.save(solicitacaoAtualizado);
 			 
 		}		
 				)
-		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario não encontrado!"));
+		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Solicitacao não encontrado!"));
 	}
 
 }

@@ -16,12 +16,12 @@ import lombok.NoArgsConstructor;
 
 
 
+@SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Entity(name="noticia")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Noticia  extends AbstractEntity {
 	
 	@Column(name="foto", unique = true, nullable = false)
