@@ -12,6 +12,9 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.apt_generated
+.apt_generated_tests
+/bin
 
 ### IntelliJ IDEA ###
 .idea

@@ -63,7 +63,7 @@ public class MateriaController {
 		.map( materia -> {
 			materiaAtualizado.setId(materia.getId());
 			return repository.save(materiaAtualizado);
-			 
+			
 		}		
 				)
 		.orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Materia não encontrado!"));
